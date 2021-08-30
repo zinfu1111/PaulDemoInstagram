@@ -16,6 +16,7 @@ class InstagramCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         fetchData()
+        
     }
     
     func fetchData() {

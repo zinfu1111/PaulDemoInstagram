@@ -8,12 +8,15 @@
 import UIKit
 
 class InstagramPostDetailCollectionViewController: UICollectionViewController {
+    
     @IBOutlet weak var postCollectionView: UICollectionView!
-    var instagramPostInfo: InstagramResponse.Graphql.User.Edge_owner_to_timeline_media
-    var instagramProfileUserName: String
-    var instagramProfilePicURL: URL
-    var indexPath: Int
+    
     var isShow = false
+    
+    let instagramPostInfo: InstagramResponse.Graphql.User.Edge_owner_to_timeline_media
+    let instagramProfileUserName: String
+    let instagramProfilePicURL: URL
+    let indexPath: Int
     
     init?(coder: NSCoder, instagramData: InstagramResponse, indexPath: Int) {
         self.instagramPostInfo = instagramData.graphql.user.edge_owner_to_timeline_media
@@ -80,7 +83,7 @@ extension InstagramPostDetailCollectionViewController {
         }
         
         //Config PostData
-        cell.set(for: instagramPostInfo.edges[indexPath.item])
+        cell.set(for: instagramPostInfo.edges[indexPath.row])
         
         return cell
         
